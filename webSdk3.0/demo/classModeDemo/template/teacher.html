@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>音视频sdk老师demo</title>
+    <link rel="stylesheet" href="../css/index.css" />
+</head>
+<body>
+		<div class="video-box fl">
+			<ul id="my-box">
+				 <li>自己视频:我是老师<span>(推出两条流)</span></li>
+				<li id="my_1" class="video"></li>
+				<li id="my_2" class="video"></li>
+			</ul>
+		</div>
+		<div class="video-box">
+			<p>其他人视频</p>
+			<ul id="others"></ul>
+		</div>
+		<div class="ul-box">
+			<p>人员列表</p>
+			<div id="user-list">
+				<li><span>用户名</span><span>状态</span></li>
+			</div>
+		</div>
+		<div class="but-box">
+			<button id="open_live">开启直播</button>
+		</div>
+		<div class="con-box">
+			<p>输出日志</p>
+			<div id="consoletext">
+				
+			</div>
+		</div>
+</body>
+</html>
+
+
+<!--必须引用文件-->
+<script src="https://class.csslcloud.net/static/dist/js/websdk_3.0.js"></script>
+<script src="https://class.csslcloud.net/static/dist/js/classMode.js"></script>
+
+<!--非必须必须引用文件-->
+<script src="https://class.csslcloud.net/static/js/jquery/jquery.min.js"></script>
+<script src="../js/teacher.js"></script>

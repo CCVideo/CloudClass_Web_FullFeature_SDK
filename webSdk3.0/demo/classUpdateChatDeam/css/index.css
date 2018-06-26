@@ -1,0 +1,399 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+
+body,html{
+	width: 100%;
+	height: 100%;
+}
+
+.video-box{
+	width: 200px;
+    height: 100%;
+	float: left;
+}
+
+ul{
+	list-style: none;
+}
+#my-box{
+	width: 200px;
+	/*border: 1px solid red;*/
+	margin-bottom: 20px;
+}
+#my-box li{
+	 height:10px;
+ }
+#my-box li.video{
+	height:120px;
+}
+
+#open_live, #close_live{
+    background-color: #0eb3fc;
+    color: #ffffff;
+    border-radius: 10px;
+    border: none;
+}
+
+.others{
+	width: 200px;
+	border: 1px solid blue;
+
+}
+.video-box li{
+	width: 200px;
+	height: 120px;
+	margin-bottom: 10px;
+	list-style: none;
+}
+.button-box{
+	width:300px;
+	float: left;
+	font-size:14px;
+    margin: 30px 0 30px 150px;
+}
+
+.button-box span{
+
+	display: inline-block;
+	padding:8px 5px;
+	margin: 5px;
+	border-radius:3px;
+	border:1px solid gray;
+	cursor: pointer;
+}
+
+
+#my-box{
+	width: 200px;
+	height: 120px;
+	border: 1px solid red;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+.others{
+	width: 200px;
+	border: 1px solid blue;
+}
+.video-box li{
+	width: 200px;
+	height: 120px;
+	margin-bottom: 10px;
+	list-style: none;
+}
+.button-box{
+	width:500px;
+	float: left;
+}
+
+.button-box span{
+
+	display: inline-block;
+	padding:10px 15px;
+	margin: 5px;
+	border-radius:3px;
+	border:1px solid gray;
+	cursor: pointer;
+}
+
+
+.demo-content-warp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    background-color: #00b3ee;
+    color: #fff;
+}
+
+.context-warp {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 800px;
+}
+
+.common {
+    width: 600px;
+    height: 750px;
+    border: 1px solid #ccc;
+}
+
+.title-common {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    color: #000;
+    background-color: #fff;
+    border: 1px solid #ccc;
+} 
+
+.content-setting button {
+    display: block;
+    margin: 20px 0 0 30px;
+    border-radius: 10px;
+    width: 210px;
+    height: 30px;
+    outline: none;
+    border: none;
+    background-color: #0eb3fc;
+    color: #fff;
+}
+
+.content-setting button:hover {
+    background-color: #ccc; 
+}
+
+.chat-setting-content {
+    display: flex;
+    justify-content: space-around;   
+}
+
+.parent-box {
+    width: 400px;
+    height: 700px;
+    border: 1px solid #ccc;
+    border-bottom: none;
+    border-left: none;    
+}
+
+.talk-box {
+    width: 400px;
+    height: 700px;
+    border: 1px solid #ccc;
+    border-bottom: none;
+    border-left: none;
+}
+
+.common-chat-window {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    text-align:center;
+    background-color: #0eb3fc;
+    color: #fff;
+}
+
+.face-box {
+    margin-top: 20px;
+    margin-left: 20px;
+    position: relative;
+}
+
+.chat-text-box {
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.text-area {
+    display: block;
+    height: 100px;
+    width: 188px;
+    background: #0eb3fc;
+    margin: 0 5px;
+    /* overflow-y: auto; */
+    color: #fff;
+    border: none;
+    resize: none;
+    padding: 5px;
+}
+.sendMessage {
+    width: 100px;
+    height: 30px;
+    background-color: #0eb3fc;
+    color: #fff;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+}
+
+.show-message {
+    width: 200px;
+    height: 350px;
+    margin: 20px 0 0 20px;
+    border: 1px solid #ccc;
+}
+
+.img-list-box {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    width: 150px;
+    height: 50px;
+    position: absolute;
+    top: -10px;
+    left: -160px;
+    background-color: #0eb3fc;
+    z-index: 10001;
+}
+
+.img-list-box img {
+    width: 15px;
+    height: 15px;
+    margin-left: 10px;
+
+}
+
+.face-box .blueButton {
+    position: absolute;
+    top: 0;
+    left: 50px;
+    display: block;
+    width: 100px;
+    height: 40px;
+    background-color: #00b3ee;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    font:normal normal normal 16px/40px 'Microsoft YaHei';
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.face-box .blueButton:hover {
+    text-decoration: none;    
+}
+
+.myFileUpload {
+    position: absolute;
+    top: 0;
+    left: 50px;
+    display: block;
+    width: 100px;
+    height: 40px;
+    opacity: 0;
+}
+
+.img-preview-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 500px;
+    background-color: #fff;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.img-preview-box img {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 300px;
+    height: 300px;
+    border: none;
+}
+
+.background-hide-box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.6;
+    z-index: 9;
+}
+
+.button-img-box {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.button-img-box button {
+    width: 88px;
+    height: 33px;
+    line-height: 33px;
+    border-radius: 4px;
+    border: none;
+    background: #0eb3fc;
+    color: #fff;
+    cursor: pointer;
+    text-align: center;
+}
+.button-img-bo .img-preview {
+
+}
+
+.emoji-message {
+    margin: 5px 10px 5px 10px;
+    padding-left: 5px;
+    background-color: #0eb3fc;
+    width: 160px;
+    border-radius: 5px;
+    /* display: flex;
+    justify-content: flex-start; */
+    color: #fff;
+    position: relative;
+}
+.emoji-message img {
+    width: 17px;
+    height: 17px;
+    margin-right: 10px;
+}
+.emoji-message span {
+    color: #000;
+}
+
+.emoji-message .message-delete {
+    color: red;
+    float: right;
+}
+
+.pop-box {
+    position: fixed;
+    top: 30px; 
+    right: 30px;
+    width: 380px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 18px;
+    color: #fff;
+    border-radius: 10px;
+    background-color: #279f43;   
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    animation-name: bounceInRight;
+}
+
+@keyframes bounceInRight {
+    from,
+    60%,
+    75%,
+    90%,
+    to {
+      animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+  
+    from {
+      opacity: 0;
+      transform: translate3d(3000px, 0, 0);
+    }
+  
+    60% {
+      opacity: 0.7;
+      transform: translate3d(-25px, 0, 0);
+    }
+  
+    75% {
+      transform: translate3d(10px, 0, 0);
+    }
+  
+    90% {
+      transform: translate3d(-5px, 0, 0);
+    }
+  
+    to {
+      transform: translate3d(0, 0, 0);
+    }
+  }

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>云课堂sdk3.0基础功能demo</title>
+		<link rel="stylesheet" href="css/index.css" />
+	</head>
+	<body>
+		<div class="video-box fl">
+			<ul id="my-box">
+				 <li>本地流1</li>
+				<li id="my_1" class="video"></li>
+				<li>本地流2</li>
+				<li id="my_2" class="video"></li>
+				<li>本地流3</li>
+				<li id="my_3" class="video"></li>
+
+			</ul>
+		</div>
+
+		<div class="video-box">
+			<p>其他人视频</p>
+			<ul id="others"></ul>
+		</div>
+
+		<div class="button-box fl">
+			<p>常用方法</p>
+			<hr/>
+			<p>
+				<span id="open_live">打开直播</span>
+				<span id="close_live">关闭直播</span>
+				<span id="check_status">检查直播状态</span>
+			</p>
+
+			<p>
+				<span id="creat_stream_main">创建本地流1</span>
+				<span id="creat_stream_assist">创建本地流2</span>
+				<span id="creat_stream_picture">创建本地流3</span>
+			</p>
+
+			<p>
+				<span id="publish_stream_1">推送本地流1</span>
+				<span id="publish_stream_2">推送本地流2</span>
+				<span id="publish_stream_3">推送本地流3</span>
+			</p>
+
+
+			<p>
+				<span id="unpublish_stream_1">停止推送流1</span>
+				<span id="unpublish_stream_2">停止推送流2</span>
+				<span id="unpublish_stream_3">停止推送流3</span>
+			</p>
+
+			<p>
+				<span id="close_my_vodeo_1">关闭流1</span>
+				<span id="close_my_vodeo_2">关闭流2</span>
+				<span id="close_my_vodeo_3">关闭流3</span>
+			</p>
+
+			<p>
+				<span id="close_audio">关闭音频</span>
+				<span id="open_audio">打开音频</span>
+			</p>
+
+			<p>
+				<span id="close_video">关闭视频</span>
+				<span id="open_video">打开视频</span>
+			</p>
+
+			<p>
+				<span id="get_device">获取设备</span>
+			</p>
+			<span id="getConnectionStats">获取流状态</span>
+
+		</div>
+	</body>
+</html>
+
+		<!-- 引用sdk-->
+<script src="https://class.csslcloud.net/static/dist/js/websdk_3.0.js"></script>
+
+
+		<!-- 引用jquery-->
+<script src="https://class.csslcloud.net/static/js/jquery/jquery.min.js"></script>
+
+        <!--引用本地文件-->
+<script src="js/index.js"></script>
+

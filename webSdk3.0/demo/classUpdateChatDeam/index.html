@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/index.css" />
+</head>
+<body>
+    <div class="button-box fl">
+        <p>
+            <span id="open_live">打开直播</span>
+            <span id="close_live">关闭直播</span>
+        </p>
+    </div>
+    <header class="demo-content-warp">
+        <h3 class="demo-title">房间配置，用户列表配置， 聊天图文配置demo</h3>
+    </header>
+    <div class="context-warp">
+        <div class="room-setting common">
+                <p class="title-common">房间配置相关功能demo</p>
+                <div class="content-setting">
+                    <button type="button" id="templateType">房间模板配置更新</button>
+                    <button type="button" id="is_follow">跟随配置更新</button>
+                    <button type="button" id="classtype">连麦模式的更新</button>
+                    <button type="button" id="video_mode">音视模式的更新</button>
+                    <button type="button" id="allow_chat">全体禁言/开言的更新</button>
+                    <button type="button" id="allow_audio">全体关闭麦克风/打开麦克风更新</button>
+                    <button type="button" id="allow_speak">全体下麦/全体上麦的更新</button>
+                    <button type="button" id="publisher_bitrate">讲师端码率的更新</button>
+                    <button type="button" id="talker_bitrate">学生端码率的更新</button>                    
+                </div>
+        </div>
+        <div class="user-setting common">
+            <p class="title-common">用户配置相关功能demo</p>  
+            <div class="content-setting">
+                <button type="button" id="user_allow_chat_close">用户单独禁言配置更新</button>
+                <button type="button" id="user_allow_chat_open">用户单独允许发言配置更新</button>
+                <button type="button" id="user_allow_audio_close">用户单独关闭音频配置更新</button>
+                <button type="button" id="user_allow_audio_open">用户单独打开音频配置更新</button>
+                <button type="button" id="user_allow_video_close">用户单独关闭视频配置更新</button>
+                <button type="button" id="user_allow_video_open">用户单独打开视频配置更新</button>
+                <button type="button" id="user_allow_draw_close">用户单独关闭画笔标注配置更新</button>
+                <button type="button" id="user_allow_draw_open">用户单独开启画笔标注配置更新</button>
+                <button type="button" id="user_hand_up_close">自由连麦摸式下关闭举手配置更新</button>
+                <button type="button" id="user_hand_up_open">自由连麦摸式下开启举手配置更新</button>
+                <button type="button" id="user_allow_assistant_close">用户单独关闭授权为讲师配置更新</button>   
+                <button type="button" id="user_allow_assistant_open">用户单独开启授权为讲师配置更新</button>
+            </div>
+        </div>
+        <div class="chat-setting common">
+            <p class="title-common">聊天图文相关功能demo</p>    
+            <div class="chat-setting-content">
+                <div class="parent-box">
+                    <p class="parent-chat-window common-chat-window">讲师端聊天窗口</p>
+                    <div class="face-box parent-face-box">
+                        <img src="./static//01.png" class="face-img-click">
+                        <span class="blueButton">选择图片</span>
+                        <input type="file" class="myFileUpload" />
+                    </div>
+                    <div class="chat-text-box">
+                        <textarea id="text-area-parent" class="text-area"></textarea>
+                        <br/>
+                        <button type="button" id="sendMessageParent" class="sendMessage">发送</button>
+                    </div>
+                    <!-- 讲师端接受信息，显示信息的窗口 -->
+                    <div class="show-message show-message-parent">
+
+                    </div>
+                </div>
+                <div class="talk-box">
+                    <p class="talk-chat-window common-chat-window">用户端聊天窗口</p>
+                    <div class="face-box talk-face-box">
+                            <img src="./static//01.png" class="face-img-click-talk">
+                            <span class="blueButton">选择图片</span>
+                            <input type="file" class="myFileUpload" id="fileUpload" />
+                    </div>
+                    <div class="chat-text-box">
+                        <textarea id="text-area-talk" class="text-area"></textarea>
+                        <br/>
+                        <button type="button" id="sendMessage" class="sendMessage">发送</button>
+                    </div>
+                    <!-- 学生端接受信息， 显示信息的窗口 -->
+                    <div class="show-message show-message-talk">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+</body>
+      <!-- 引用压缩sdk-->
+<script src="https://class.csslcloud.net/static/dist/js/websdk_3.0.js"></script>
+<script src="https://class.csslcloud.net/static/dist/js/classUpdateChat.js"></script>
+
+
+        <!--引用本地文件-->
+<script src="https://class.csslcloud.net/static/js/jquery/jquery.min.js"></script>
+<script src="js/updateChat.js"></script>
+</html>

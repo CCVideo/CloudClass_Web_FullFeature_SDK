@@ -1,0 +1,189 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+body,html{
+	min-width: 900px;
+	height: 100%;
+	padding: 0px;
+	margin: 0;
+}
+.video-box{
+	width: 300px;
+	float: left;
+
+}
+.video-box>p{
+	height:50px;
+	text-align: center;
+	font-size: 16px;
+	margin: 0;
+	 line-height: 50px;
+}
+ul{
+	list-style: none;
+}
+#my-box{
+	width: 300px;
+	margin:0 auto;
+}
+#others{
+	width: 200px;
+	margin:0 auto;
+}
+#my-box li{
+	width: 200px;
+	 height:50px;
+	 font-size: 16px;
+	 margin: 0 auto;
+	 line-height: 50px;
+	 margin-bottom: 10px;
+
+ }
+ #my-box li:first-child{
+ 	margin-bottom: 0;
+ 	width: 300px;
+ 	text-align: center;
+ }
+#my-box li.video{
+	height:120px;
+}
+
+
+.others{
+	width: 200px;
+	border: 1px solid blue;
+
+}
+.video-box li{
+
+	height: 120px;
+	margin-bottom: 10px;
+	list-style: none;
+}
+.video-box li span{
+	font-size: 12px;
+	color: red;
+}
+.button-box{
+	width:300px;
+	float: left;
+	font-size:12px;
+	margin-left:10px;
+}
+
+.button-box span{
+
+	display: inline-block;
+	padding:8px 5px;
+	margin: 5px;
+	border-radius:3px;
+	border:1px solid gray;
+	cursor: pointer;
+}
+.ul-box{
+	width: 300px;
+	height: auto;
+	float: left;
+
+	
+}
+.ul-box #user-list{
+	border: 1px solid #ccc;
+	border-bottom: 0;
+	width: 80%;
+	margin: auto;
+}
+.ul-box>p{
+	height:50px;
+	text-align: center;
+	font-size: 16px;
+	margin: 0;
+	 line-height: 50px;
+}
+.ul-box li{
+	list-style: none;
+	height: 40px;
+	line-height: 40px;
+	overflow: hidden;
+	border-bottom:1px solid #ccc ;
+}
+.ul-box li span{
+	display: block;
+	float: left;
+	text-align: center;
+	
+}
+.ul-box li span:first-child{
+border-right:1px solid #ccc ;
+width: 60%;
+}
+.ul-box li span:last-child{
+	width: 38%;
+
+}
+
+.ul-box li:nth-child(2n+1){
+	background:#e8e8e8;
+}
+.but-box{
+	height: auto;
+	width: 100%;
+	padding: 50px 0;
+	overflow: hidden;
+	clear: both;
+}
+.but-box button{
+	padding:0 16px;
+	margin: 0 20px;
+	box-shadow: none;
+	height: 40px;
+	line-height: 40px;
+	border-radius: 5px;
+	font-size: 16px;
+	border-style:none;
+	float: left;
+	background-color: #777777;
+	color: #fff;
+
+}
+button:focus {
+    outline: none;
+}
+button:active {
+    border-style: none;
+}
+.con-box{
+	width: 100%;
+}
+.con-box>p{
+	padding-left: 10px;
+	font-size: 16px;
+	line-height: 30px;
+}
+#consoletext{
+	width: 860px;
+	padding: 10PX;
+	margin:0 10px;
+	min-height: 100px;
+	max-height: 300px;
+	overflow-y: auto;
+	border: 1px solid salmon;
+	border-radius:6px;
+}
+#consoletext p{
+	font-size: 12px;
+	color: #000;
+	line-height: 14px;
+}
+::-webkit-scrollbar{  
+   width:28px;  
+   height:18px;  
+}  
+#clickbutton-p{
+	height: 40xp;
+	line-height: 40px;
+	font-size: 14px;
+	color: red;
+}
