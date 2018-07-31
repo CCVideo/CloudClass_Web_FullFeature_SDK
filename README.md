@@ -1,5 +1,5 @@
-# CloudClass_Web_FullFeature_SDK
-CC视频云课堂 Web端SDK和Demo
+# CloudClass_Web_Module_SDK
+CC视频云课堂 Web端组件化SDK和Demo
 
 [websdk3.0API文档](https://github.com/CCVideo/CloudClass_Web_FullFeature_SDK/wiki/websdk3.0API%E6%96%87%E6%A1%A3)
 
