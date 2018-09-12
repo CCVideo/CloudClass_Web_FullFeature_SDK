@@ -1,0 +1,588 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+html, body{
+    width:100%;
+    height:100%;
+    position: relative;
+    font-size:13px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+/*字体图标样式引用*/
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Material Icons'), local('MaterialIcons-Regular'), url(font_icon.woff2) format('woff2');
+}
+
+.material-icons {
+    outline: none;
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+}
+/*demo中画板区域样式*/
+/*画板父盒子，大小样式可以自己定义*/
+.control-box{
+    /*display: none;*/
+    position: absolute;
+    right:0;
+    top:0;
+    height:30px;
+    border:1px solid gray;
+    padding: 10px 5px;
+    -webkit-user-select: none; /* Chrome all / Safari all */
+    -moz-user-select: none; /* Firefox all */
+    -ms-user-select: none; /* IE 10+ */ /* No support for these yet, use at own risk */
+    -o-user-select: none;
+    user-select: none;
+    z-index:999999999;
+}
+.control-box button{
+    background: none;
+    border:none;
+    cursor: pointer;
+    padding:0 3px;
+    border-radius: 3px;
+}
+.control-box button i{
+    color: #fff;
+    font-size:18px;
+}
+li{
+    list-style: none;
+}
+button,#draw-parent div{
+    outline: none;
+}
+.control-box{
+    border:none;
+}
+.control-box button.current{
+    background: #545252;
+}
+.control-box button:hover{
+    background: #545252;
+}
+
+
+
+/*颜色字体大小选取区域样式*/
+.control-box button img{
+    width: 18px;
+}
+.draw-type{
+    display: none;
+    position: absolute;
+    width: 280px;
+    right: 0;
+    top: 30px;
+    background: #565553;
+    padding: 5px 0 2px 5px;
+    z-index: 999999999;
+    line-height: normal;
+}
+.draw-type .left{
+    float: left;
+}
+.draw-type .thick li {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin:  3px;
+    cursor: pointer;
+    text-align: center;
+}
+.draw-type .thick li.current {
+    background: #787775;
+}
+.draw-type .thick li:after {
+    content: '';
+    width: 4px;
+    height: 4px;
+    display: inline-block;
+    border-radius: 2px;
+    background: #fff;
+    vertical-align: middle;
+    position: relative;
+    top:-3px;
+}
+.draw-type .thick li:nth-child(2):after {
+    width: 6px;
+    height: 6px;
+    border-radius: 3px;
+}
+.draw-type .thick li:nth-child(3):after {
+    width: 8px;
+    height: 8px;
+    border-radius: 4px;
+}
+
+
+.draw-type .text {
+    display: none;
+}
+.draw-type .text li {
+    display: inline-block;
+    margin: 0 6px;
+}
+.draw-type .color {
+    white-space: nowrap;
+}
+.draw-type .color:before {
+    content: '|';
+    color: #8c8c8c;
+    margin: 0 10px;
+    vertical-align: 4px;
+}
+.draw-type .color li {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin: 0 3px;
+    cursor: pointer;
+    background: #000000;
+    border: 1px solid #565553;
+}
+.draw-type .color li:hover{
+    border: 1px solid #fff;
+}
+.draw-type .color li:nth-child(2){
+    background: #F27A1A;
+}
+.draw-type .color li:nth-child(3){
+    background: #70C75E;
+}
+.draw-type .color li:nth-child(4){
+    background: #78A7F5;
+}
+.draw-type .color li:nth-child(5){
+    background: #7B797A;
+}
+.draw-type .color li:nth-child(6){
+    background: #E33423;
+}
+.draw-type .color li.current{
+    border: 2px solid #fff;
+}
+
+
+
+/*上传按钮样式*/
+#dochouse {
+    width: 100px;
+    cursor: pointer;
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    margin-right: 5px;
+    color: #fff;
+    z-index: 999999999;
+}
+#dochouse .dochouse-doc {
+    position: relative;
+    top: -5px;
+}
+
+/*文档展示样式*/
+.dochouse-box,
+.docview{
+    position: fixed;
+    z-index: 99999999;
+    width: 100%;
+    height: 100%;
+    color: #333;
+    top: 0;
+    left:0;
+}
+.mask{
+    background: #000;
+    filter: alpha(opacity=40);
+    opacity: 0.4;
+    width: 100%;
+    height: 100%;
+}
+
+.dochouse-box .inner,
+.docview .inner{
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    margin: -300px 0 0 -300px;
+    left: 50%;
+    top: 50%;
+    background: #fff;
+    border-radius: 5px;
+    z-index: 99;
+    text-align: center;
+}
+
+.dochouse-box h3,
+#docviews h3{
+    font-size:15px;
+    margin: 10px;
+}
+.docli{
+    height: 50px;
+    line-height: 50px;
+    border-top: 1px solid #e7e7e7;
+    padding-left: 30px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: left;
+    font-size:13px;
+}
+.doctype-icon {
+    position: absolute;
+    left: 10px;
+    top: 15px;
+    background: #ff6600;
+    height: 17px;
+    line-height: 18px;
+    border-radius: 3px;
+}
+.doctype-icon .doctypei {
+    color: #fff;
+    font-size: 16px;
+}
+.docli.current {
+    background: #f9f9f9;
+}
+.inner .chioce {
+    text-align: initial;
+    height: 480px;
+    overflow-y: auto;
+    margin-top: -6px;
+}
+.inner .icon-logol{
+    position: absolute;
+    left: 10px;
+    top: 15px;
+    color: #fff;
+    font-size: 13px;
+    padding: 2px;
+    border-radius: 3px;
+    width: 17px;
+    height: 17px;
+    text-align: center;
+}
+
+.docli i.upicon_blue {
+    background: #379cea;
+
+}
+.docli i.upicon_gren {
+    background: #ffa800;
+}
+.docli i.upicon_yew {
+    background: #f46139;
+}
+
+.inner .chioce .doc-delete-icon {
+    position: absolute;
+    float: right;
+    top: 16px;
+    right: 15px;
+    color: #989898;
+    font-size:18px;
+}
+
+
+/*控制条样式*/
+.doc-bottom{
+    position: absolute;
+    bottom: 0;
+    height: 45px;
+    overflow: auto;
+    width: 100%;
+    white-space: nowrap;
+    background: #3c3938;
+    overflow: hidden;
+    overflow-x: auto;
+    color: #fff;
+    left:0;
+}
+.doc-bottom-effect {
+    overflow: hidden;
+    width: 365px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+.doc-bottom-effect div {
+    /*float: left;*/
+    width: 45px;
+    height: 45px;
+    text-align: center;
+    line-height: 45px;
+}
+.crp {
+    cursor: pointer;
+}
+.doc-bottom-effect div i {
+    font-size: 25px;
+    line-height: 1.8;
+}
+.icon-shu {
+    width: 1px;
+    height: 30px;
+    display: inline-block;
+    float: left;
+    background: rgba(255,255,255,0.2);
+    margin-top: 7px;
+}
+.doc-bottom .disabled {
+    color: grey;
+}
+
+/** 文档预览 ***/
+#docviews .chioce {
+    overflow: auto;
+    height: 553px;
+    padding-left: 5px;
+    text-align: center;
+
+}
+#docviews .chioce .docview-slide {
+    float: left;
+    width: 140px;
+    height: 100px;
+    border: 1px solid #e7e7e7;
+    margin-right: 4px;
+    margin-bottom: 5px;
+    position: relative;
+    cursor: pointer;
+}
+#docviews .chioce .docview-slide.current {
+    border: 1px solid #ff6600;
+}
+#docviews .chioce .docview-slide img {
+    max-width: 100%;
+    height: 100%;
+}
+#docviews .chioce .docview-slide i {
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    width: 20px;
+    height: 20px;
+    line-height: 21px;
+    background: #c6c6c6;
+    color: #fff;
+}
+
+/**文件上传**/
+.dochouse-box .upload-file-btn {
+    position: relative;
+    display: inline-block;
+    border-radius: 4px;
+    padding: 2px 12px;
+    overflow: hidden;
+    color: #fff;
+    text-decoration: none;
+    text-indent: 0;
+    line-height: 17px;
+    margin-top: 10px;
+    cursor: pointer;
+    cursor: hand;
+
+    background: #f27c1a;
+    border: none;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    line-height: 20px;
+    padding: 1px 12px 7px;
+}
+#file-upload {
+
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    height: 30px;
+    cursor: pointer;
+
+    width: 150px;
+    margin-left: 20px;
+    font-size: 0px;
+    left: 0;
+    margin: 0;
+
+    height: 40px;
+    line-height: 40px;
+    border-radius: 20px;
+    display: block;
+
+
+
+}
+#showdoclist .spinner {
+    top: 10px;
+    left: 20px;
+    z-index: 6;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    margin: 0;
+    background-color: #fff;
+    border-radius: 100%;
+    -webkit-animation: scaleout 1.0s infinite ease-in-out;
+    animation: scaleout 1.0s infinite ease-in-out;
+    text-align: center;
+}
+.spinner {
+    margin: 150px auto 0;
+    width: 150px;
+    text-align: center;
+}
+
+#showdoclist .spinner {
+    top: 10px;
+    left: 20px;
+    z-index: 6;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    margin: 0 ;
+    background-color: #fff;
+
+    border-radius: 100%;
+    -webkit-animation: scaleout 1.0s infinite ease-in-out;
+    animation: scaleout 1.0s infinite ease-in-out;
+}
+
+@-webkit-keyframes scaleout {
+    0% { -webkit-transform: scale(0.0) }
+    100% {
+        -webkit-transform: scale(1.0);
+        opacity: 0;
+    }
+}
+
+@keyframes scaleout {
+    0% {
+        transform: scale(0.0);
+        -webkit-transform: scale(0.0);
+    } 100% {
+          transform: scale(1.0);
+          -webkit-transform: scale(1.0);
+          opacity: 0;
+      }
+}
+
+
+
+/* 以下样式属于画板区核心样式，不建议用户修改**/
+
+#draw-box{
+    position: relative;
+    width:100%;
+    height:100%;
+    overflow: auto;
+
+}
+#draw-board{
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    z-index: 99999;
+}
+#draw{
+    background: #fff;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    z-index: 999;
+    overflow: hidden;
+}
+
+#draw iframe{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /*z-index: 998;*/
+}
+
+
+
+
+#draw-box::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    cursor: pointer;
+}
+#draw-box::-webkit-scrollbar-corner {
+    background: #3D3938;
+}
+#draw-box::-webkit-scrollbar-corner {
+    background: #3D3938;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: rgba(204, 204, 204, 0.40);
+    cursor: pointer;
+}
+#draw-box::-webkit-scrollbar-track  {
+    border-radius: 0;
+    background: #3D3938;
+}
+
+#draw-box .fluo-dis{
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 1000000;
+	cursor: none;
+	overflow: hidden;
+	display: none;
+}
+#draw-box .fluo-con{
+	width: 24px;
+	height: 24px;
+	border-radius:12px ;
+}
+
+#draw-box .fluo-con .backg-c{
+	width:10px;
+	height:10px;
+	margin: 7px auto 0;
+	border: 3px solid red;
+	border-radius:5px ;
+	box-shadow: 0 0 20px red;
+}
+#draw-box .fluo-ear{
+	width: 10px;
+	height: 10px;
+	border-radius:50%;
+	border: 1px solid #000;
+}
+
+#draw-box .fluo-ear .backg-c{
+	width: 100%;
+	height: 100%;
+	border: 1px solid #fff;
+	border-radius:50%;
+}
+

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>teacher</title>
+
+	<!--  引入样式表  样式表中引用了字体图标   表中样式可自定义修改 -->
+	<link href="../css/draw.css" rel="stylesheet" />
+
+	<style>
+		body{
+			background: gray;
+			position: relative;
+			display: flex;
+		}
+		#out-box{
+			width:1000px;
+			height:700px;
+			margin: 0 auto;
+			align-self: center;
+		}
+		#draw-parent{
+			width:100%;
+			height:100%;
+			position: relative;
+			top:0;
+			left:0;
+			padding:50px 5px;
+			background: #3D3938;
+			overflow: hidden;
+		}
+
+		/*多页白板*/
+		.doc-bottom-effect  .add-board{
+			width:30px;
+			height:48px;
+		}
+		.doc-bottom-effect  .add-board img{
+			width:100%;
+			height:100%;
+			display: block;
+			position: relative;
+			top:-3px;
+		}
+		#docviews .chioce .docview-add {
+			float: left;
+			width: 143px;
+			height: 100px;
+			border: 1px solid #e7e7e7;
+			margin-right: 4px;
+			margin-bottom: 5px;
+			position: relative;
+			cursor: pointer;
+		}
+		#docviews .chioce .docview-add img{
+			width:100%;
+			height:100%;
+			display: block;
+			padding: 10px 30px;
+			cursor: pointer;
+		}
+		#docviews .chioce .docview-slide .deleteBoard{
+			width:20px;
+			height: 20px;
+			position: absolute;
+			top:4px;
+			right:4px;
+			display: none;
+		}
+		#docviews .chioce .docview-slide .deleteBoard{
+			width:20px;
+			height: 20px;
+			position: absolute;
+			top:4px;
+			right:4px;
+			display: none;
+		}
+		.out-box-2 .nothing{
+			height:25px;
+		}
+		.out-box-2 .sure-delete{
+			background: #F38528;
+		}
+
+
+
+
+
+
+
+	</style>
+</head>
+<body>
+
+
+
+	<!--外部盒子样式大小自定义-->
+	<div id="out-box">
+
+		<!--画板区域-->
+		<div id="draw-parent">
+
+
+
+
+			<!--显示或隐藏文档区按钮， 用户可根据需要自定义-->
+			<div id="dochouse">
+				<i class="material-icons">backup</i><span class="dochouse-doc"> 文档库</span>
+			</div>
+
+
+
+
+			<div class="doc-bottom" style="">
+				<div class="doc-bottom-effect">
+					<div class="add-board crp"><img src="../css/img/addBoard.png" /></div>
+					<div class="effect-preview crp"><i class="material-icons">view_module</i></div>
+					<i class="icon-shu"></i>
+					<div class="effect-pre crp"><i class="material-icons">keyboard_arrow_left</i></div>
+					<div class="effect-pagenum"><span class="currentPage">1</span>/<span class="totalpage">1</span></div>
+					<div class="effect-next crp"><i class="material-icons">keyboard_arrow_right</i></div>
+					<i class="icon-shu"></i>
+					<div class="effect-narrow crp  shrink"><i class="material-icons">zoom_out</i></div>
+					<div class="effect-zoom">100%</div>
+					<div class="effect-enlarge crp enlarge"><i class="material-icons">zoom_in</i></div>
+					<i class="icon-shu"></i>
+					<div class="effect-full crp"><i class="material-icons">fullscreen</i></div>
+					<div class="effect-fullexit crp" style="display:none;"><i class="material-icons">fullscreen_exit</i></div>
+				</div>
+			</div>
+
+
+
+
+
+			<!-- 画笔粗细、字体大小、画笔颜色选取-->
+			<div class="draw-type">
+				<ul class="thick left">
+					<li title="1" class="current"></li>
+					<li title="3"></li>
+					<li title="5"></li>
+				</ul>
+				<ul class="text left">
+					<li>T</li>
+					<li>
+						<select id="font-sel">
+							<option>15</option>
+							<option>20</option>
+							<option>24</option>
+							<option>28</option>
+							<option>36</option>
+							<option>48</option>
+							<option>56</option>
+						</select>
+					</li>
+				</ul>
+				<ul class="color left">
+					<li title="0" class="current"></li>
+					<li title="15890970"></li>
+					<li title="7391070"></li>
+					<li title="7907317"></li>
+					<li title="8092026"></li>
+					<li title="14890019"></li>
+				</ul>
+			</div>
+
+
+			<!-- 操作按钮 -->
+			<div class="control-box">
+				<button id="fluorescence">
+					<img src="../css/img/icon-jiguang.png" />
+				</button>
+				<button id="laserPen">
+					<img src="../css/img/icon-stationery.png" />
+				</button>
+				<button id="straightLine">
+					<img src="../css/img/icon-vertical_line.png" />
+				</button>
+				<button class="current" id="draw_line"><i class="material-icons">mode_edit</i></button>
+				<button id="draw_square"><i class="material-icons">crop_din</i></button>
+				<button id="draw_circle"><i class="material-icons">panorama_fish_eye</i></button>
+				<button id="draw_text"><i class="material-icons">title</i></button>
+				<button id="delet_before"><i class="material-icons">reply</i></button>
+				<button id="erasure">
+	            	<img src="../css/img/erasureone.svg"/>
+	            </button>
+				<button id="clear"><i class="material-icons">delete_forever</i></button>
+			</div>
+
+
+
+
+
+
+
+
+		</div>
+	</div>
+
+
+
+
+	<!-- 课堂已存在文档，自定义文档区，客户根据自己ui修改相应操作 -->
+	<div class="dochouse-box" style="display: none;">
+		<div class="inner">
+			<h3>
+				<span class="docStock" data-type="doc">文档库</span>
+				<i class="material-icons clear" style="float: right;margin-right: 10px;cursor: pointer;">clear</i>
+			</h3>
+			<div id="showdoclist"  class="chioce">
+				<div title="WhiteBorad" class="current docli" id="WhiteBorad">
+					<div class="doctype-icon"><i class="material-icons doctypei">create</i></div>
+					白板
+				</div>
+			</div>
+			<a href="javascript:;" id="doc-upload-btn" class="file upload-file-btn" >
+				<i class="material-icons" style="position: relative;top: 6px;">file_upload</i><span class="data-text" data-text="上传文件">上传文件</span>
+				<input type="file" name="file" id="file-upload" />
+			</a>
+		</div>
+		<div class="mask"></div>
+	</div>
+
+
+
+
+	<!--   自定义单个文档缩略图预览区，用户可根据需要更改样式    -->
+	<div class="docview" style="display:none">
+		<div class="inner" id="docviews">
+			<h3>文档预览<span class="type"></span><i class="material-icons clear crp" style="position: absolute;right: 10px;">clear</i></h3>
+			<div class="chioce"></div>
+		</div>
+		<div class="mask"></div>
+	</div>
+
+
+
+
+
+	<!--引入音视频sdk,websdk_3.0线上支持此版本画板在2018.9.20以后，建议先线下引用-->
+	<!--<script src="https://class.csslcloud.net/static/dist/js/websdk_3.0.js"></script>-->
+	<script src="../js/sdk/websdk_3.0.js"></script>
+
+	<!--引用直播文档加载-->
+	<script src="//image.csslcloud.net/js/dpc.js"></script>
+
+	<!--引入jquery类库，画板sdk 部分功能需依赖jquery库-->
+	<script src="https://class.csslcloud.net/static/js/jquery/jquery.min.js"></script>
+
+	<!--引入画板sdk-->
+	<!--<script src="../../js/newDrawSdk_1.js"></script>-->
+	<script src="../js/sdk/drawSdk_3.0.js"></script>
+
+
+
+	<!--文档相关操作-->
+	<script src="../js/doc.js"></script>
+
+
+
+	<!--页面初始化登陆-->
+	<script src="../js/teacher.js"></script>
+
+
+</body>
+</html>
+

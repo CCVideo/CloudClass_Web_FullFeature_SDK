@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>student</title>
+
+    <!--  引入样式表  样式表中引用了字体图标   表中样式可自定义修改 -->
+    <link href="../css/draw.css" rel="stylesheet" />
+
+    <style>
+        body{
+            background: gray;
+            position: relative;
+            display: flex;
+        }
+        #out-box{
+            width:1000px;
+            height:700px;
+            margin: 0 auto;
+            align-self: center;
+        }
+        #draw-parent{
+            width:100%;
+            height:100%;
+            position: relative;
+            top:0;
+            left:0;
+            padding:50px 5px;
+            background: #3D3938;
+            overflow: hidden;
+        }
+
+    </style>
+</head>
+<body>
+
+
+
+<!--外部盒子大小样式自定义-->
+<div id="out-box">
+
+    <!--画板区域-->
+    <div id="draw-parent">
+
+        <!-- 文档控制条，用户可自定义 -->
+        <div class="doc-bottom" style="">
+            <div class="doc-bottom-effect" style="width: 245px;">
+                <div class="effect-pagenum"><span class="currentPage">1</span>/<span class="totalpage">1</span></div>
+                <i class="icon-shu"></i>
+                <div class="effect-narrow crp  shrink" style="display: none;"><i class="material-icons">zoom_out</i></div>
+                <div class="effect-zoom">100%</div>
+                <div class="effect-enlarge crp enlarge" style="display: none;"><i class="material-icons">zoom_in</i></div>
+                <i class="icon-shu"></i>
+                <div class="effect-full crp"><i class="material-icons">fullscreen</i></div>
+                <div class="effect-fullexit crp" style="display:none;"><i class="material-icons">fullscreen_exit</i></div>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+<!--引入音视频sdk,websdk_3.0线上支持此版本画板在2018.9.20以后，建议先线下引用-->
+<!--<script src="https://class.csslcloud.net/static/dist/js/websdk_3.0.js"></script>-->
+<script src="../js/sdk/websdk_3.0.js"></script>
+
+<!--引用直播文档加载-->
+<script src="//image.csslcloud.net/js/dpc.js"></script>
+
+
+<!--引入jquery类库，画板sdk 部分功能需依赖jquery库-->
+<script src="https://class.csslcloud.net/static/js/jquery/jquery.min.js"></script>
+
+<!--引入画板sdk-->
+<!--<script src="../../js/newDrawSdk_1.js"></script>-->
+<script src="../js/sdk/drawSdk_3.0.js"></script>
+
+
+
+<!--文档相关操作-->
+<script src="../js/doc.js"></script>
+
+
+
+<!--页面初始化登陆-->
+<script src="../js/student.js"></script>
+
+
+</body>
+</html>
+

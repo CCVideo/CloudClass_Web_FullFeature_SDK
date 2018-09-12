@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.6.1 (26313) - http://www.bohemiancoding.com/sketch -->
+    <title>橡皮擦</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="草稿" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-25">
+            <rect id="Rectangle-824" x="0" y="0" width="18" height="18"></rect>
+            <g id="Group-17" transform="translate(1.000000, 1.000000)">
+                <path d="M0.5736426,10.9731375 C0.184077184,10.5835721 0.186433834,9.94960514 0.580219279,9.55581969 L9.05581969,1.08021928 C9.44901731,0.687021663 10.0833568,0.683861833 10.4731375,1.0736426 L15.4263574,6.02686246 C15.8159228,6.41642788 15.8135662,7.05039486 15.4197807,7.44418031 L9.05578273,13.8081783 C7.4963793,15.3675817 4.95968586,15.3591808 3.40384601,13.803341 L0.5736426,10.9731375 L0.5736426,10.9731375 Z" id="Rectangle-827" stroke="#FFFFFF" stroke-width="2"></path>
+                <path d="M3.87867966,6.46446609 L9.53553391,12.1213203 L8.12132034,13.5355339 L2.46446609,7.87867966 L3.87867966,6.46446609 L3.87867966,6.46446609 Z" id="Rectangle-828" fill="#FFFFFF"></path>
+            </g>
+        </g>
+    </g>
+</svg>
